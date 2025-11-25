@@ -32,6 +32,7 @@ jobs:
           haxe-version: 4.3.7
       - uses: joshtynjala/setup-apache-flex-action@v2
         with:
+          flex-version: "4.16.1"
           air-version: 33.1
           accept-air-license: true
       - name: Set up Haxelib dependencies
@@ -68,6 +69,7 @@ jobs:
           haxe-version: 4.3.7
       - uses: joshtynjala/setup-apache-flex-action@v2
         with:
+          flex-version: "4.16.1"
           air-version: 33.1
           accept-air-license: true
       - name: Set up Haxelib dependencies
