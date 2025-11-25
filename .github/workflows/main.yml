@@ -30,6 +30,10 @@ jobs:
       - uses: krdlab/setup-haxe@v1
         with:
           haxe-version: 4.3.7
+      - uses: joshtynjala/setup-apache-flex-action@v2
+        with:
+          air-version: 33.1
+          accept-air-license: true
       - name: Set up Haxelib dependencies
         run: |
           haxelib install lime --quiet
@@ -62,6 +66,12 @@ jobs:
       - uses: krdlab/setup-haxe@v1
         with:
           haxe-version: 4.3.7
+      - uses: joshtynjala/setup-apache-flex-action@v2
+        with:
+          air-version: 33.1
+          accept-air-license: true
+        with:
+          haxe-version: 4.3.7
       - name: Set up Haxelib dependencies
         run: |
           haxelib install lime --quiet
@@ -69,4 +79,4 @@ jobs:
           haxelib install feathersui --quiet
           haxelib dev feathersui-flex-migration ${{ github.workspace }}
       - name: Build Flash .swc library
-        run: haxelib run openfl build flash -debug
+        run: haxelib run lime build flash -debug
