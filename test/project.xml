@@ -8,7 +8,7 @@
 	<source path="src"/>
 	<source path="../src"/>
 
-	<haxeflag name="--swf-lib" value="/Users/joshtynjala/Development/flash/sdks/apache-flex-sdk-4.16.1_AIR51.2.2.4/frameworks/libs/framework.swc"/>
+	<haxeflag name="--swf-lib" value="${AIR_SDK}/frameworks/libs/framework.swc"/>
 	
 	<haxelib name="openfl"/>
 	<haxelib name="feathersui"/>
