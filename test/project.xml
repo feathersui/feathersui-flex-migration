@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="Flex Migration Tests" package="com.feathersui.flex.migration.tests" version="1.0.0" company="Bowler Hat LLC"/>
+	<app main="TestMain" file="FlexMigration"/>
+	<window hidden="true"/>
+
+	<source path="src"/>
+	<source path="../src"/>
+
+	<haxeflag name="--swf-lib" value="/Users/joshtynjala/Development/flash/sdks/apache-flex-sdk-4.16.1_AIR51.2.2.4/frameworks/libs/framework.swc"/>
+	
+	<haxelib name="openfl"/>
+	<haxelib name="feathersui"/>
+	<haxelib name="utest"/>
+</project>
