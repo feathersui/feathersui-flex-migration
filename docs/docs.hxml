@@ -1,4 +1,4 @@
--cmd haxelib run openfl build ../project.xml html5 -xml -clean -Dfind_missing_docs
+-cmd haxelib run lime build ../project.xml air -xml -clean -Dfind_missing_docs
 
 --next
--cmd haxelib run dox -o ../bin/api -i ../bin/html5/types.xml --include feathers.messaging --include feathers.rpc --toplevel-package feathers --title "Feathers UI RPC Services API Reference (Haxe/OpenFL)" -theme ./feathersui-theme -D website "https://feathersui.com" -D textColor 0x292522 -D source-path "https://github.com/feathersui/feathersui-flex-migration/tree/main/src/"
+-cmd haxelib run dox -o ../bin/api -i ../bin/air/types.xml --include feathers.flex --toplevel-package feathers.flex --title "Feathers UI Flex Migration API Reference (Haxe/OpenFL)" -theme ./feathersui-theme -D website "https://feathersui.com" -D textColor 0x292522 -D source-path "https://github.com/feathersui/feathersui-flex-migration/tree/main/src/"
