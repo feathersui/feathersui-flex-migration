@@ -42,6 +42,7 @@ jobs:
           haxelib install feathersui --quiet
           haxelib install dox --quiet
           haxelib dev feathersui-flex-migration ${{ github.workspace }}
+          haxelib run lime config AIR_SDK ${{ env.FLEX_HOME }}
       - name: Build API reference
         working-directory: docs
         run: haxe docs.hxml
@@ -78,5 +79,30 @@ jobs:
           haxelib install openfl --quiet
           haxelib install feathersui --quiet
           haxelib dev feathersui-flex-migration ${{ github.workspace }}
+          haxelib run lime config AIR_SDK ${{ env.FLEX_HOME }}
       - name: Build Flash .swc library
         run: haxelib run lime build flash -debug
+
+  test-air:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: krdlab/setup-haxe@v1
+        with:
+          haxe-version: 4.3.7
+      - uses: joshtynjala/setup-apache-flex-action@v2
+        with:
+          flex-version: "4.16.1"
+          air-version: 33.1
+          accept-air-license: true
+      - name: Set up Haxelib dependencies
+        run: |
+          haxelib install lime --quiet
+          haxelib install openfl --quiet
+          haxelib install feathersui --quiet
+          haxelib install utest --quiet
+          haxelib dev feathersui-flex-migration ${{ github.workspace }} 
+          haxelib run lime config AIR_SDK ${{ env.FLEX_HOME }}
+      - name: Run Tests
+        working-directory: test
+        run: haxelib run lime test air
