@@ -70,8 +70,6 @@ jobs:
         with:
           air-version: 33.1
           accept-air-license: true
-        with:
-          haxe-version: 4.3.7
       - name: Set up Haxelib dependencies
         run: |
           haxelib install lime --quiet
